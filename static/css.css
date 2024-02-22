@@ -1,0 +1,42 @@
+body {
+    font-family:'Droid Sans', sans-serif;
+    background-color:rgb(117, 171, 101);
+    margin: 6%;
+    font-size: 100%;
+}
+
+.heading{
+    display: flex;
+    margin: 10px 0;
+}
+
+h1 {
+    margin: 0 auto 0 0;
+    font-size: 1.6em;
+}
+
+h2 {
+    margin: auto 0 auto auto;
+    font-size: 1.3em;
+}
+
+p {
+    line-height: 1.4em;
+    font-size: 1.0em
+}
+
+#no {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    font-size: 100px;
+}
+
+#stats {
+    font-size: 25px;
+}
+
+tbody > tr > th {
+    text-align: right;
+}
