@@ -1,11 +1,11 @@
 body {
-    font-family:'Droid Sans', sans-serif;
-    background-color:rgb(117, 171, 101);
+    font-family: 'Droid Sans', sans-serif;
+    background-color: rgb(117, 171, 101);
     margin: 6%;
     font-size: 100%;
 }
 
-.heading{
+.heading {
     display: flex;
     margin: 10px 0;
 }
@@ -34,9 +34,25 @@ p {
 }
 
 #stats {
+    /* display: flex; */
     font-size: 25px;
+    justify-content: center;
+    width: 100%;
+    /* table-layout: fixed; */
 }
 
 tbody > tr > th {
     text-align: right;
+    width: 50%;
+    padding-right: 0.3em;
+}
+
+tbody > tr > th, td {
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+tbody > tr> td {
+    padding-left: 0.3em;
+    text-align: left
 }
