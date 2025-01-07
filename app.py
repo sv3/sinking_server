@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, redirect
 from markupsafe import escape
 import json
 
@@ -15,7 +15,7 @@ status = None
 
 @app.route('/')
 def index():
-    with open('status.txt', 'r') as f:
+    with open('static/status.txt', 'r') as f:
         for line in f:
             pass
         try:
@@ -27,14 +27,7 @@ def index():
 
 @app.route('/status')
 def get_status():
-    with open('status.txt', 'r') as f:
-        for line in f:
-            pass
-        try:
-            status_str = line
-        except:
-            status_str = ''
-    return f"<p>{escape(status)}</p>"
+    return redirect('static/status.txt')
 
 @app.post('/status')
 def post_status():
@@ -42,7 +35,7 @@ def post_status():
     status_str = request.form['data']
     status = json.loads(status_str)
     print(status)
-    with open('status.txt', 'a') as f:
+    with open('static/status.txt', 'a') as f:
         f.write(str(status_str) + '\n')
     return "posted"
 

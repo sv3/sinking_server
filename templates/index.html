@@ -15,13 +15,24 @@
           <th scope="row">Current:</th><td>{{status.cu}} mA</td>
         </tr>
         <tr>
-          <th scope="row">Water Level:</th><td>{{status.w}} out of 4095</td>
+          <th scope="row">Water Level:</th><td>{{'%0.1f' | format(status.w/4095 * 100)}}%</td>
         </tr>
         <tr>
           <th scope="row">Pump cycles in past 24 hours:</th><td>{{status.pc}}</td>
         </tr>
         <tr>
           <th scope="row">Pump run time in past 24 hours:</th><td>{{status.pt}} s</td>
+        </tr>
+        <tr>
+          <th scope="row">Timestamp:</th><td><script>document.write(new Date({{status.t}}*1000).toLocaleString());</script></td>
+        </tr>
+        <tr>
+          <th scope="row">Elapsed:</th>
+	  <td id=elapsed> <script>
+	    setInterval(() => {
+	        document.getElementById("elapsed").innerText = Math.floor(((Date.now() - new Date({{status.t}}*1000))/1000));
+	    }, 1000)
+	  </script></td>
         </tr>
       </table>
     </div>
